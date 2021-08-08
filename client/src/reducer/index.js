@@ -1,6 +1,7 @@
 const initialState = {
     recipes : [],
-    allRecipes: []
+    allRecipes: [],
+    allDetails: []
 }
 
 function rootReducer(state = initialState, action) {
@@ -26,6 +27,36 @@ function rootReducer(state = initialState, action) {
                 recipes: recipeFiltered
             }
         
+        case 'GET_DETAIL': 
+            return {
+                ...state,
+                allDetails: action.id
+            }
+        
+        case 'ORDER_BY_NAME' :
+            let sortedArr = action.payload === 'asc' ? 
+            state.allRecipes.sort(function(a,b) {
+                if(a.name > b.name) {
+                    return 1 
+                } 
+                if(b.name > a.name) {
+                    return -1
+                }
+                return 0
+            }) :
+            state.recipes.sort(function(a,b) {
+                if(a.name > b.name) {
+                    return -1
+                }
+                if(b.name > a.name) {
+                    return 1
+                }
+                return 0
+            })
+            return {
+                recipes: sortedArr,
+            }
+
         default: 
             return state
     }

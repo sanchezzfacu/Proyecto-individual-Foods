@@ -1,19 +1,13 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-export default function Paginado({recipesPerPage, allRecipes, paginado}) {
-    const pageNumbers = [];
-
-    for(let i = 1; i <= Math.ceil(allRecipes/recipesPerPage); i++) {
-        pageNumbers.push(i)
-    }
-
+export default function LandingPage() {
     return (
-            <div>
-                {
-                pageNumbers?.map( number => 
-                    <a href onClick={() => paginado(number)}>{number}</a>
-                )
-                }
-            </div>
+        <>
+            <h1>WELCOME TO MY PAGE</h1>
+            <Link to='/home'>
+                <button>Ingresar</button>
+            </Link>
+        </>    
     )
 }

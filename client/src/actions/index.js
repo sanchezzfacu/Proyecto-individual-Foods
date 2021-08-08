@@ -25,9 +25,26 @@ export function getRecipeName(name) {
     }
 }
 
+export function orderByName(payload) {
+    return {
+        type: 'ORDER_BY_NAME',
+        payload
+    }
+}
+
 export function filterRecipeByType(payload) {
     return {
         type: 'FILTER_BY_RECIPE',
         payload 
+    }
+}
+
+export function getDetail(id) {
+    return async function(dispatch) {
+        let json = await axios.get('http://localhost:3001/recipes/' + id)
+        return dispatch({
+            type: 'GET_DETAIL',
+            id: json.data
+        })
     }
 }
