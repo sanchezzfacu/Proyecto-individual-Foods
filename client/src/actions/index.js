@@ -51,7 +51,7 @@ export function getDetail(id) {
 
 export function getTypes() {
     return async function(dispatch) {
-        let json = await axios.get('htt://localhost:3001/types')
+        let json = await axios.get('http://localhost:3001/types')
         return dispatch({
             type: 'GET_TYPES',
             payload: json.data
