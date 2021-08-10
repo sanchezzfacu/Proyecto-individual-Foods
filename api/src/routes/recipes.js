@@ -48,7 +48,7 @@ router.get('/', async (req,res) => {
             let recipeName = await recipeTotal.filter(el => el.name.toLowerCase().includes(name.toLowerCase()))
             recipeName.length ?
             res.status(200).send(recipeName) :
-            res.status(404).send('Error de pana')
+            res.status(404).send('Error')
         } else {
         res.status(200).send(recipeTotal)
     }     

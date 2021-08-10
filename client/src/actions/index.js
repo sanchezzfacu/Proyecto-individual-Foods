@@ -48,3 +48,20 @@ export function getDetail(id) {
         })
     }
 }
+
+export function getTypes() {
+    return async function(dispatch) {
+        let json = await axios.get('htt://localhost:3001/types')
+        return dispatch({
+            type: 'GET_TYPES',
+            payload: json.data
+        })
+    }
+}
+
+export function postRecipe(payload) {
+    return async function(dispatch) {
+        const json = await axios.post('http://localhost:3001/recipe', payload)
+        return json
+    }
+}

@@ -1,7 +1,8 @@
 const initialState = {
     recipes : [],
     allRecipes: [],
-    allDetails: []
+    allDetails: [],
+    types: []
 }
 
 function rootReducer(state = initialState, action) {
@@ -55,6 +56,17 @@ function rootReducer(state = initialState, action) {
             })
             return {
                 recipes: sortedArr,
+            }
+
+        case 'POST_RECIPE':
+            return {
+                ...state
+            }
+
+        case 'GET_TYPES' :
+            return {
+                ...state,
+                types: action.payload
             }
 
         default: 
