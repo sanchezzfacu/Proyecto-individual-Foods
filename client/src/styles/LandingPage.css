@@ -1,8 +1,7 @@
-body {
-    padding: 0;
-    margin: 0;
-    align-items: center;
-}
+/* body {
+
+    background-image: url('../background.jpg');
+} */
 
 .background {
     background-image: url('../background.jpg');

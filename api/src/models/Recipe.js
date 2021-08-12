@@ -23,11 +23,11 @@ module.exports = (sequelize) => {
       allowNull: true
     },
     puntuacion: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: true
     },
     healthy_level: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: true
     },
     step_by_step: {

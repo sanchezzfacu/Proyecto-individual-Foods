@@ -32,6 +32,13 @@ export function orderByName(payload) {
     }
 }
 
+export function orderByScore(payload) {
+    return {
+        type: 'ORDER_BY_SCORE',
+        payload
+    }
+}
+
 export function filterRecipeByType(payload) {
     return {
         type: 'FILTER_BY_RECIPE',

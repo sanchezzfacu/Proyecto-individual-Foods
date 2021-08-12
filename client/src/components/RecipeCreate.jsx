@@ -5,8 +5,26 @@ import { useDispatch, useSelector } from 'react-redux'
 
 function validate(input) {
     let errors = {};
-    if (input.name.length < 0) {
-      errors.name = 'A recipe name is required';
+    if (!input.name) {
+        errors.name = 'A recipe name is required';
+    } else if(input.name.length < 5) {
+        errors.name = 'Recipe name too short'
+    }
+    
+    if(!input.img){
+        errors.img = 'A link image must be provided'  
+    }
+    
+    if(input.resumen.length < 20) {
+        errors.resumen = 'Recipe resume too short'
+    }
+
+    if(input.healthy_level > 100) {
+        errors.healthy_level = 'Error, the maximum score is 100'
+    }
+
+    if(input.puntuacion > 100) {
+        errors.puntuacion = 'Error, the maximum score is 100'
     }
     return errors;
 };    
@@ -16,7 +34,6 @@ export default function RecipeCreate() {
     const types = useSelector((state) => state.types)
     const history = useHistory()
     const [errors,setErrors] = useState({});
-
     const [input, setInput] = useState({
         name: "",
         resumen: "",
@@ -26,12 +43,16 @@ export default function RecipeCreate() {
         step_by_step:"",
         diet: []
     })
-    
+
     function handleChange(e) {
         setInput({
             ...input,
             [e.target.name] : e.target.value
         })
+        setErrors(validate({
+            ...input,
+            [e.target.name]: e.target.value,
+        }));
     }
 
     function handleSelect(e) {
@@ -67,19 +88,60 @@ export default function RecipeCreate() {
 
     return (
         <div>
-            <Link to='/home'><button>Volver</button></Link>
+            <Link to='/home'><button>Back</button></Link>
             <h1>Create recipe!</h1>
             <form onSubmit={(e) => {handleSubmit(e)}}>
                 <div>
-                    <label>Nombre: </label>
+                    <label>Name: </label>
                     <input
                         type="text"
                         value={input.name}
                         name="name"
+                        required
+                        className={errors.name && 'danger'}
                         onChange={handleChange}
                     />
+                    <label>    
                         {errors.name && (
                             <p>{errors.name}</p>
+                        )} 
+                    </label>    
+                </div>
+                <div>
+                    <label>Resume: </label>
+                    <input 
+                        type="text"
+                        value={input.resumen}
+                        name="resumen"
+                        required
+                        onChange={handleChange}
+                    />
+                            {errors.resumen && (
+                            <p>{errors.resumen}</p>
+                        )}  
+                </div>
+                <div>
+                    <label>Score 1 to 100: </label>
+                    <input 
+                        type="number"
+                        value={input.puntuacion}
+                        name="puntuacion"
+                        onChange={handleChange}
+                    />
+                            {errors.puntuacion && (
+                            <p>{errors.puntuacion}</p>
+                        )}  
+                </div>
+                <div>
+                    <label>Healthy score 1 to 100: </label>
+                    <input  
+                        type="number"
+                        value={input.healthy_level}
+                        name="healthy_level"
+                        onChange={handleChange}
+                    />
+                            {errors.healthy_level && (
+                            <p>{errors.healthy_level}</p>
                         )}  
                 </div>
                 <div>
@@ -90,24 +152,9 @@ export default function RecipeCreate() {
                         name="step_by_step"
                         onChange={handleChange}
                     />
-                </div>
-                <div>
-                    <label>Puntuacion: </label>
-                    <input 
-                        type="number"
-                        value={input.puntacion}
-                        name="puntuacion"
-                        onChange={handleChange}
-                    />
-                </div>
-                <div>
-                    <label>Healthy level: </label>
-                    <input 
-                        type="text"
-                        value={input.healthy_level}
-                        name="healthy_level"
-                        onChange={handleChange}
-                    />
+                            {errors.step_by_step && (
+                            <p>{errors.step_by_step}</p>
+                        )}  
                 </div>
                 <div>
                     <label>Image: </label>
@@ -115,26 +162,21 @@ export default function RecipeCreate() {
                         type="text"
                         value={input.img}
                         name="img"
+                        className={errors.img && 'danger'}
                         onChange={handleChange}
                     />
+                            {errors.img && (
+                            <p>{errors.img}</p>
+                        )}  
                 </div>
-                <div>
-                    <label>Resume: </label>
-                    <input 
-                        type="text"
-                        value={input.resumen}
-                        name="resumen"
-                        onChange={handleChange}
-                    />
-                </div>
+                <br/>
                 <select onChange={(e) => handleSelect(e)}>
                     {types.map((type) => (
                         <option value={type.name}>{type.name}</option>
                     ))}
                 </select>
-                <ul><li>{input.diet.map(el => el.toString() + " ,")}</li></ul>        
+                <p>{input.diet.map(el => el.toString() + " ,")}</p>     
                 <button type="submit">CREATE RECIPE</button>
-
             </form>
         </div>
     )
