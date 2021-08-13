@@ -18,7 +18,6 @@ function rootReducer(state = initialState, action) {
         
         case 'GET_RECIPE_NAME' : 
             return {    
-                ...state,
                 recipes: action.payload
             }
         

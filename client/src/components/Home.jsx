@@ -6,7 +6,7 @@ import { getRecipes, filterRecipeByType, orderByName, orderByScore } from '../ac
 import Card  from './Card'
 import SearchBar  from './SearchBar';
 import Paginado from './Paginado';
-
+import '../styles/Home.css'
 
 export default function Home() {
     const dispatch = useDispatch()
@@ -42,47 +42,53 @@ export default function Home() {
         dispatch(filterRecipeByType(e.target.value))
     }
     
-    function handleClick() {
-        dispatch(getRecipes())
-    }
     return(
-        <div>
-            <Link to="/create">Add Recipe</Link>
-            <select onChange={ e => handleFilterRecipe(e)}>
-                <option value="all">All</option>
-                <option value="vegan">Vegan</option>
-                <option value="dairy free">Dairy free</option>
-                <option value="gluten free">Gluten free</option>
-                <option value="vegetarian">Vegetarian</option>
-                <option value="lacto ovo vegetarian">Lacto ovo vegetarian</option>
-                <option value="paleolithic">Paleolithic</option>
-                <option value="primal">Primal</option>
-                <option value="pescatarian">Pescatarian</option>
-                <option value="fodmap friendly">Fodmap friendly</option>
-                <option value="whole 30">Whole 30</option>
-            </select>
-            <select onChange={e => handleSort(e)}>
-                <option value="asc">Asc</option>
-                <option value="desc">Desc</option>
-            </select>
-            <select onChange={e => handleScore(e)}>
-                <option value="highest">Highest score</option>
-                <option value="lowest">Lowest score</option>
-            </select>
-            <SearchBar/>
-            <Paginado
-                recipesPerPage={recipesPerPage}
-                allRecipes={allRecipes.length}
-                paginado={paginado}
-            />
-            <button onClick={e => {handleClick(e)}}>Load recipes</button>
-                <div>
+        <div className="background-home">
+            <div className="header">
+                <Link to="/create">Add Recipe</Link>
+                <select onChange={ e => handleFilterRecipe(e)}>
+                    <option value="all">All</option>
+                    <option value="vegan">Vegan</option>
+                    <option value="dairy free">Dairy free</option>
+                    <option value="gluten free">Gluten free</option>
+                    <option value="vegetarian">Vegetarian</option>
+                    <option value="lacto ovo vegetarian">Lacto ovo vegetarian</option>
+                    <option value="paleolithic">Paleolithic</option>
+                    <option value="primal">Primal</option>
+                    <option value="pescatarian">Pescatarian</option>
+                    <option value="fodmap friendly">Fodmap friendly</option>
+                    <option value="whole 30">Whole 30</option>
+                </select>
+                <select onChange={e => handleSort(e)}>
+                    <option value="asc">Asc</option>
+                    <option value="desc">Desc</option>
+                </select>
+                <select onChange={e => handleScore(e)}>
+                    <option value="highest">Highest score</option>
+                    <option value="lowest">Lowest score</option>
+                </select>
+                <SearchBar/>
+            </div>
+            <div className="paginado">
+                <Paginado
+                    recipesPerPage={recipesPerPage}
+                    allRecipes={allRecipes.length}
+                    paginado={paginado}
+                />
+                <br/>
+                <br/>
+            </div>    
+                <div className="div-items">
                     {
                         currentRecipes?.map(el => {
                             return(
-                                <Link to={ '/home/' + el.id  }>
-                                    <Card name={el.name} image={el.img} diet={el.diet ? el.diet + " " : el.diets.map(el => el.name.toString() + " ")}/>
-                                </Link>
+                                <div className="card">
+                                    <Link to={ '/home/' + el.id  }>
+                                        <div className="align-card">
+                                            <Card image={el.img} name={el.name} diet={el.diet ? el.diet + " " : el.diets.map(el => el.name.toString() + " ")}/>
+                                        </div>
+                                    </Link>
+                                </div>
                             )
                         })
                     }

@@ -1,0 +1,43 @@
+.card {
+    background-color:rgba(211, 211, 211, 0.453);
+    width: 320px;
+    height: 350px;
+    display: flex;   
+    flex-wrap: wrap;
+    justify-content: center;
+    font-family: sans-serif;
+    padding:10px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    align-items: center;
+}
+
+.header {
+    background-color:rgba(211, 211, 211, 0.453);
+
+}
+
+.paginado {
+    display:flex
+}
+
+.background-home {
+    margin: 0;
+    padding: 0;
+    background-image: url('../shutterstock_1827672272.jpg'); 
+    background-size: 100%;
+    background-attachment: fixed;
+
+}
+
+.div-items {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.align-card {
+    justify-content: center;
+    align-items: center;
+}
