@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Link,useHistory } from 'react-router-dom'
 import { postRecipe, getTypes } from '../actions'
 import { useDispatch, useSelector } from 'react-redux'
+import '../styles/RecipeCreate.css'
 
 function validate(input) {
     let errors = {};
@@ -87,8 +88,12 @@ export default function RecipeCreate() {
     }, [dispatch])
 
     return (
-        <div>
-            <Link to='/home'><button>Back</button></Link>
+        <div className="background">
+            <div className="volver">
+                <Link to='/home'><h2>BACK</h2></Link>
+            </div>
+        <div className="cuadro">
+        <div className="div-home">
             <h1>Create recipe!</h1>
             <form onSubmit={(e) => {handleSubmit(e)}}>
                 <div>
@@ -101,11 +106,11 @@ export default function RecipeCreate() {
                         className={errors.name && 'danger'}
                         onChange={handleChange}
                     />
-                    <label>    
                         {errors.name && (
-                            <p>{errors.name}</p>
+                        <div className="error">
+                                <p>{errors.name}</p>
+                        </div>     
                         )} 
-                    </label>    
                 </div>
                 <div>
                     <label>Resume: </label>
@@ -116,9 +121,12 @@ export default function RecipeCreate() {
                         required
                         onChange={handleChange}
                     />
+                        <div className="error">
+
                             {errors.resumen && (
                             <p>{errors.resumen}</p>
                         )}  
+                        </div>
                 </div>
                 <div>
                     <label>Score 1 to 100: </label>
@@ -128,9 +136,11 @@ export default function RecipeCreate() {
                         name="puntuacion"
                         onChange={handleChange}
                     />
+                    <div className="error">
                             {errors.puntuacion && (
                             <p>{errors.puntuacion}</p>
                         )}  
+                   </div>     
                 </div>
                 <div>
                     <label>Healthy score 1 to 100: </label>
@@ -140,9 +150,11 @@ export default function RecipeCreate() {
                         name="healthy_level"
                         onChange={handleChange}
                     />
+                        <div className="error">
                             {errors.healthy_level && (
                             <p>{errors.healthy_level}</p>
                         )}  
+                        </div>
                 </div>
                 <div>
                     <label>Step by step: </label>
@@ -165,9 +177,11 @@ export default function RecipeCreate() {
                         className={errors.img && 'danger'}
                         onChange={handleChange}
                     />
+                        <div className="error">
                             {errors.img && (
                             <p>{errors.img}</p>
                         )}  
+                        </div>
                 </div>
                 <br/>
                 <select onChange={(e) => handleSelect(e)}>
@@ -175,9 +189,13 @@ export default function RecipeCreate() {
                         <option value={type.name}>{type.name}</option>
                     ))}
                 </select>
-                <p>{input.diet.map(el => el.toString() + " ,")}</p>     
+                <div className="diets">
+                <p>{input.diet.map(el => el.toString().toUpperCase() + ", ")}</p>     
+                </div>
                 <button type="submit">CREATE RECIPE</button>
             </form>
+        </div>
+        </div>
         </div>
     )
 }

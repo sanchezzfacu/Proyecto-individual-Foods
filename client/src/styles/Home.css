@@ -5,16 +5,32 @@
     display: flex;   
     flex-wrap: wrap;
     justify-content: center;
+    text-align: center;
     font-family: sans-serif;
     padding:10px;
     border: 1px solid #000;
     border-radius: 10px;
     align-items: center;
+    margin: 10px;
+    color : #ffff
+}
+
+.card:hover {
+    background-color:rgb(220, 220, 220);
 }
 
 .header {
     background-color:rgba(211, 211, 211, 0.453);
 
+}
+
+input {
+    width: auto;
+    text-align: center;
+}
+
+img {
+    border-radius: 10px
 }
 
 .paginado {
@@ -25,7 +41,7 @@
     margin: 0;
     padding: 0;
     background-image: url('../shutterstock_1827672272.jpg'); 
-    background-size: 100%;
+    background-size: 100vw 100vh;
     background-attachment: fixed;
 
 }

@@ -1,6 +1,21 @@
 .paginado {
-    background-color:rgba(211, 211, 211, 0.453);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.numbers {
+    color: white;
+    background-color:rgb(55, 47, 47);
     width: 20px;
     height: 20px;
-    border-radius: 10px;
+    border-radius: 3px;
+    margin: 10px;
+}
+
+.numbers:hover {
+    color: rgb(55, 47, 47);
+    background-color: white;
 }

@@ -1,0 +1,56 @@
+.div-home {
+    background-color: rgba(79, 76, 76, 0.7);
+    width: 600px;
+    margin: auto;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    border-radius: 7%;
+    position: absolute;
+    width: 30%;
+    height: 40%;
+    top: 5%;
+    left: 36%;
+}
+body {
+    font-family: monospace;
+    
+}
+
+label{
+    color: #fff
+}
+
+.error {
+    color: red;
+}
+
+input, textarea {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input:hover {
+    color:rgba(155, 148, 148, 0.7)
+}
+
+.background {
+    background-image: url(../shutterstock_1827672272.jpg);
+    background-size: 100vw 100vh;
+}
+
+h1 {
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 15px;
+}
+
+.diets {
+    color: white
+}
+
+.volver {
+    color: white;
+    font-size: 20px;
+    font-family: sans-serif;
+}
