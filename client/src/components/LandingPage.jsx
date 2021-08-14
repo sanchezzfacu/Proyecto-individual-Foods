@@ -10,7 +10,9 @@ export default function LandingPage() {
             </div>    
                     <Link to='/home'>
                         <div className= "button">
-                            ENTER
+                            <div className="text">
+                                ENTER
+                            </div>
                         </div>
                     </Link>
         </div>
