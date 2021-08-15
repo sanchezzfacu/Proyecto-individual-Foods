@@ -60,3 +60,13 @@ img {
     justify-content: center;
     align-items: center;
 }
+
+.searchbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.create {
+    margin-left: 1260px;
+}

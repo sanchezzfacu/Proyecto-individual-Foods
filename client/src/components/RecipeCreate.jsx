@@ -95,9 +95,11 @@ export default function RecipeCreate() {
         <div className="cuadro">
         <div className="div-home">
             <h1>Create recipe!</h1>
+            <div className="div-form">
             <form onSubmit={(e) => {handleSubmit(e)}}>
                 <div>
                     <label>Name: </label>
+                    <div className="input-div">
                     <input
                         type="text"
                         value={input.name}
@@ -106,6 +108,7 @@ export default function RecipeCreate() {
                         className={errors.name && 'danger'}
                         onChange={handleChange}
                     />
+                    </div>
                         {errors.name && (
                         <div className="error">
                                 <p>{errors.name}</p>
@@ -114,6 +117,7 @@ export default function RecipeCreate() {
                 </div>
                 <div>
                     <label>Resume: </label>
+                    <div className="input-div">
                     <input 
                         type="text"
                         value={input.resumen}
@@ -121,6 +125,7 @@ export default function RecipeCreate() {
                         required
                         onChange={handleChange}
                     />
+                    </div>
                         <div className="error">
 
                             {errors.resumen && (
@@ -130,12 +135,14 @@ export default function RecipeCreate() {
                 </div>
                 <div>
                     <label>Score 1 to 100: </label>
+                    <div className="input-div">
                     <input 
                         type="number"
                         value={input.puntuacion}
                         name="puntuacion"
                         onChange={handleChange}
                     />
+                    </div>
                     <div className="error">
                             {errors.puntuacion && (
                             <p>{errors.puntuacion}</p>
@@ -144,12 +151,14 @@ export default function RecipeCreate() {
                 </div>
                 <div>
                     <label>Healthy score 1 to 100: </label>
+                    <div className="input-div">
                     <input  
                         type="number"
                         value={input.healthy_level}
                         name="healthy_level"
                         onChange={handleChange}
                     />
+                    </div>
                         <div className="error">
                             {errors.healthy_level && (
                             <p>{errors.healthy_level}</p>
@@ -158,18 +167,21 @@ export default function RecipeCreate() {
                 </div>
                 <div>
                     <label>Step by step: </label>
+                    <div className="input-div">
                     <input
                         type="text"
                         value={input.step_by_step}
                         name="step_by_step"
                         onChange={handleChange}
                     />
+                    </div>
                             {errors.step_by_step && (
                             <p>{errors.step_by_step}</p>
                         )}  
                 </div>
                 <div>
                     <label>Image: </label>
+                    <div className="input-div">
                     <input 
                         type="text"
                         value={input.img}
@@ -177,6 +189,7 @@ export default function RecipeCreate() {
                         className={errors.img && 'danger'}
                         onChange={handleChange}
                     />
+                    </div>
                         <div className="error">
                             {errors.img && (
                             <p>{errors.img}</p>
@@ -194,6 +207,7 @@ export default function RecipeCreate() {
                 </div>
                 <button type="submit">CREATE RECIPE</button>
             </form>
+            </div>
         </div>
         </div>
         </div>

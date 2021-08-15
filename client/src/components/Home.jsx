@@ -45,7 +45,12 @@ export default function Home() {
     return(
         <div className="background-home">
             <div className="header">
-                <Link to="/create">Add Recipe</Link>
+                <div className="create">
+                <Link to="/create">CREATE RECIPE</Link>
+                </div>
+                <div className="searchbar">
+                <SearchBar/>
+                </div>
                 <select onChange={ e => handleFilterRecipe(e)}>
                     <option value="all">All</option>
                     <option value="vegan">Vegan</option>
@@ -67,7 +72,6 @@ export default function Home() {
                     <option value="highest">Highest score</option>
                     <option value="lowest">Lowest score</option>
                 </select>
-                <SearchBar/>
             </div>
             <div className="paginado">
                 <Paginado

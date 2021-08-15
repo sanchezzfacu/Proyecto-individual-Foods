@@ -19,3 +19,8 @@
     color: rgb(55, 47, 47);
     background-color: white;
 }
+
+.numbers:active {
+    color: rgb(55, 47, 47);
+    background-color: white;
+}
