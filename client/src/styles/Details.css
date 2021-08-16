@@ -5,6 +5,7 @@
 }
 
 .hijo {
+    margin-top: 20px;
     background-attachment: fixed;
     background-color:rgba(0, 0, 0, 0.7);
     border-radius: 7px;
@@ -12,4 +13,9 @@
     box-sizing: border-box;
     text-align: center;
     color: rgb(206, 206, 206)
+}
+
+.recipe-name {
+    margin-top: 20px;
+    box-sizing: border-box;
 }

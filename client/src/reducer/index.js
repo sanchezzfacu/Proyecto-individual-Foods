@@ -17,8 +17,9 @@ function rootReducer(state = initialState, action) {
             }
         
         case 'GET_RECIPE_NAME' : 
-            return {    
-                recipes: action.payload
+            return {        
+                recipes: action.payload,
+                allDetails: action.payload
             }
         
         case 'FILTER_BY_RECIPE': 

@@ -13,15 +13,13 @@ export default function Paginado({recipesPerPage, allRecipes, paginado}) {
         <>
                 {
                 pageNumbers?.map( number => 
-                    <a href onClick={() => paginado(number)}>
-                        <Link>
+                        <Link onClick={() => paginado(number)}>
                         <div className="paginado">
                             <div className="numbers">
                                 {number}
                             </div>
                         </div>
                         </Link>
-                        </a>
                 )
                 }
         </>        
