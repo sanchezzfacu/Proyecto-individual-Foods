@@ -65,10 +65,6 @@ export default function RecipeCreate() {
 
     function handleSubmit(e) {
         e.preventDefault()
-        setErrors(validate({
-            ...input,
-            [e.target.name]:e.target.value
-        }));
         dispatch(postRecipe(input))
         alert('Recipe created succesfully!')
         setInput({
@@ -96,7 +92,7 @@ export default function RecipeCreate() {
         <div className="div-home">
             <h1>Create recipe!</h1>
             <div className="div-form">
-            <form onSubmit={(e) => {handleSubmit(e)}}>
+            <form onSubmit={handleSubmit}>
                 <div>
                     <label>Name: </label>
                     <div className="input-div">

@@ -22,11 +22,11 @@ export default function SearchBar() {
             <input 
                 type= 'text'
                 placeholder='Search..'
-                onChange={(e) => handleInputChange(e)}  
+                onChange={handleInputChange}  
             />
             <button
                 type= 'submit' 
-                onClick={(e) => handleSubmit(e)}
+                onClick={handleSubmit}
             >SEARCH</button>
         </div>
     )

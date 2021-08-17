@@ -1,7 +1,6 @@
 const router = require('express').Router();
 require('dotenv').config();
 const axios = require('axios');
-const e = require('express');
 const {Recipe, Diet} = require('../db')
 const { API_KEY } = process.env;
 

@@ -14,16 +14,16 @@ export default function Home() {
     const [orden, setOrden] = useState('')
     const [currentPage, setCurrentPage] = useState(1);
     const [recipesPerPage] = useState(9);
-    const indexOfLastRecipe = currentPage * recipesPerPage;
-    const indexOfFirtsRecipe = indexOfLastRecipe - recipesPerPage;
+    const indexOfLastRecipe = currentPage * recipesPerPage;       //9  18   27
+    const indexOfFirtsRecipe = indexOfLastRecipe - recipesPerPage;//0   9   18
     const currentRecipes = allRecipes.slice(indexOfFirtsRecipe,indexOfLastRecipe)
 
     useEffect(() => {
         dispatch(getRecipes())
     },[dispatch])
     
-    const paginado = (recipeNumber) => {
-        setCurrentPage(recipeNumber)
+    const paginado = (number) => {
+        setCurrentPage(number)
     }
 
     function handleSort(e) {
@@ -51,7 +51,7 @@ export default function Home() {
                 <div className="searchbar">
                 <SearchBar/>
                 </div>
-                <select onChange={ e => handleFilterRecipe(e)}>
+                <select onChange={handleFilterRecipe}>
                     <option value="all">All</option>
                     <option value="vegan">Vegan</option>
                     <option value="dairy free">Dairy free</option>
@@ -64,11 +64,11 @@ export default function Home() {
                     <option value="fodmap friendly">Fodmap friendly</option>
                     <option value="whole 30">Whole 30</option>
                 </select>
-                <select onChange={e => handleSort(e)}>
-                    <option value="asc">Asc</option>
+                <select onChange={handleSort}>
+                    <option value="asc">Asc</option>    
                     <option value="desc">Desc</option>
                 </select>
-                <select onChange={e => handleScore(e)}>
+                <select onChange={handleScore}>
                     <option value="highest">Highest score</option>
                     <option value="lowest">Lowest score</option>
                 </select>

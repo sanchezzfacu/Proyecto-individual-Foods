@@ -18,13 +18,17 @@ function rootReducer(state = initialState, action) {
         
         case 'GET_RECIPE_NAME' : 
             return {        
+                ...state,
                 recipes: action.payload,
-                allDetails: action.payload
+                allDetails: action.payload,
             }
         
         case 'FILTER_BY_RECIPE': 
             const allRecipes = state.allRecipes
-            const recipeFiltered = action.payload === 'all' ? allRecipes : allRecipes.filter(el => el.diet ? el.diet.toString().includes(action.payload) : el.diets.map(el => el.name.toString().includes(action.payload)))
+            const recipeFiltered = action.payload === 'all' ? allRecipes : 
+
+            allRecipes.filter(el => el.diet ? el.diet.toString().includes(action.payload) : 
+            el.diets.map(el => el.name.toString().includes(action.payload)))
             return {
                 ...state,
                 recipes: recipeFiltered
@@ -62,7 +66,7 @@ function rootReducer(state = initialState, action) {
             }
         /* falls through */
         case 'ORDER_BY_NAME' :
-            let sortedArr = action.payload === 'asc' ? 
+            const sortedArr = action.payload === 'asc' ? 
             state.order.sort(function(a,b) {
                 if(a.name > b.name) {
                     return 1 

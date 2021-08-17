@@ -69,6 +69,6 @@ export function getTypes() {
 export function postRecipe(payload) {
     return async function(dispatch) {
         const json = await axios.post('http://localhost:3001/recipe', payload)
-        return json
+        return json.data
     }
 }

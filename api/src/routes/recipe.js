@@ -10,7 +10,6 @@ router.post('/', async (req, res) => {
         healthy_level,
         step_by_step,
         diet,
-        createdInDb
     } = req.body
 
     let recipeCreated = await Recipe.create({
@@ -20,7 +19,6 @@ router.post('/', async (req, res) => {
         puntuacion,
         healthy_level,
         step_by_step,
-        createdInDb
     })
 
     let typeDb = await Diet.findAll({
