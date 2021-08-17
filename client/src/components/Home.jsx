@@ -65,8 +65,8 @@ export default function Home() {
                     <option value="whole 30">Whole 30</option>
                 </select>
                 <select onChange={handleSort}>
-                    <option value="asc">Asc</option>    
-                    <option value="desc">Desc</option>
+                    <option value="asc">a-z</option>    
+                    <option value="desc">z-a</option>
                 </select>
                 <select onChange={handleScore}>
                     <option value="highest">Highest score</option>

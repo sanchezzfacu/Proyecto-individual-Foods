@@ -2,7 +2,6 @@ const initialState = {
     recipes : [],
     allRecipes: [],
     allDetails: [],
-    order: [],
     types: []
 }
 
@@ -13,14 +12,12 @@ function rootReducer(state = initialState, action) {
                 ...state,
                 recipes: action.payload,
                 allRecipes: action.payload,
-                order: action.payload
             }
         
         case 'GET_RECIPE_NAME' : 
             return {        
                 ...state,
                 recipes: action.payload,
-                allDetails: action.payload,
             }
         
         case 'FILTER_BY_RECIPE': 
@@ -42,7 +39,7 @@ function rootReducer(state = initialState, action) {
         
         case 'ORDER_BY_SCORE' :
             let sortedScore = action.payload === 'lowest' ? 
-            state.order.sort(function(a,b){
+            state.allRecipes.sort(function(a,b){
                 if(a.puntuacion > b.puntuacion) {
                     return 1
                 }
@@ -51,7 +48,7 @@ function rootReducer(state = initialState, action) {
                 }
                 return 0
             }) :
-            state.order.sort(function(a,b) {
+            state.allRecipes.sort(function(a,b) {
                 if(a.puntuacion > b.puntuacion) {
                     return -1
                 }
@@ -67,7 +64,7 @@ function rootReducer(state = initialState, action) {
         /* falls through */
         case 'ORDER_BY_NAME' :
             const sortedArr = action.payload === 'asc' ? 
-            state.order.sort(function(a,b) {
+            state.allRecipes.sort(function(a,b) {
                 if(a.name > b.name) {
                     return 1 
                 } 
@@ -76,7 +73,7 @@ function rootReducer(state = initialState, action) {
                 }
                 return 0
             }) :
-            state.order.sort(function(a,b) {
+            state.allRecipes.sort(function(a,b) {
                 if(a.name > b.name) {
                     return -1
                 }
