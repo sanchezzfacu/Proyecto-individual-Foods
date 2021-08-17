@@ -45,7 +45,7 @@ export default function RecipeCreate() {
         diet: []
     })
 
-    function handleChange(e) {
+    function handleInputChange(e) {
         setInput({
             ...input,
             [e.target.name] : e.target.value
@@ -102,7 +102,7 @@ export default function RecipeCreate() {
                         name="name"
                         required
                         className={errors.name && 'danger'}
-                        onChange={handleChange}
+                        onChange={handleInputChange}
                     />
                     </div>
                         {errors.name && (
@@ -119,7 +119,7 @@ export default function RecipeCreate() {
                         value={input.resumen}
                         name="resumen"
                         required
-                        onChange={handleChange}
+                        onChange={handleInputChange}
                     />
                     </div>
                         <div className="error">
@@ -136,7 +136,7 @@ export default function RecipeCreate() {
                         type="number"
                         value={input.puntuacion}
                         name="puntuacion"
-                        onChange={handleChange}
+                        onChange={handleInputChange}
                     />
                     </div>
                     <div className="error">
@@ -152,7 +152,7 @@ export default function RecipeCreate() {
                         type="number"
                         value={input.healthy_level}
                         name="healthy_level"
-                        onChange={handleChange}
+                        onChange={handleInputChange}
                     />
                     </div>
                         <div className="error">
@@ -168,7 +168,7 @@ export default function RecipeCreate() {
                         type="text"
                         value={input.step_by_step}
                         name="step_by_step"
-                        onChange={handleChange}
+                        onChange={handleInputChange}
                     />
                     </div>
                             {errors.step_by_step && (
@@ -182,8 +182,7 @@ export default function RecipeCreate() {
                         type="text"
                         value={input.img}
                         name="img"
-                        className={errors.img && 'danger'}
-                        onChange={handleChange}
+                        onChange={handleInputChange}
                     />
                     </div>
                         <div className="error">
@@ -193,7 +192,7 @@ export default function RecipeCreate() {
                         </div>
                 </div>
                 <br/>
-                <select onChange={(e) => handleSelect(e)}>
+                <select onChange={handleSelect}>
                     {types.map((type) => (
                         <option value={type.name}>{type.name}</option>
                     ))}
