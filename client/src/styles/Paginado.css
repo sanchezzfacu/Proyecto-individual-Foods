@@ -8,20 +8,16 @@
 
 .numbers {
     color: white;
-    background-color:rgb(55, 47, 47);
+    background-color: rgba(0,136,169,1);
     width: 20px;
     height: 20px;
     border-radius: 3px;
     text-align: center;
     align-items: center;
+    transition: all 0.3s ease 0s;
+
 }
 
 .numbers:hover {
-    color: rgb(55, 47, 47);
-    background-color: white;
-}
-
-.numbers:active {
-    color: rgb(55, 47, 47);
-    background-color: white;
+    background-color: rgba(0,136,169,0.7);
 }

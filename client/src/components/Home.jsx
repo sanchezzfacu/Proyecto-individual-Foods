@@ -6,6 +6,7 @@ import { getRecipes, filterRecipeByType, orderByName, orderByScore } from '../ac
 import Card  from './Card'
 import SearchBar  from './SearchBar';
 import Paginado from './Paginado';
+import logo from '../logoHenry.png'
 import '../styles/Home.css'
 
 export default function Home() {
@@ -13,7 +14,7 @@ export default function Home() {
     const allRecipes = useSelector((state) => state.recipes)
     const [orden, setOrden] = useState('')
     const [currentPage, setCurrentPage] = useState(1);
-    const [recipesPerPage] = useState(9);
+    const [recipesPerPage] = useState(8);
     const indexOfLastRecipe = currentPage * recipesPerPage;       //9  18   27
     const indexOfFirtsRecipe = indexOfLastRecipe - recipesPerPage;//0   9   18
     const currentRecipes = allRecipes.slice(indexOfFirtsRecipe,indexOfLastRecipe)
@@ -45,6 +46,9 @@ export default function Home() {
     return(
         <div>
                 <nav>
+                    <a href="/home"> 
+                        <img src={logo}/>
+                    </a>
                     <div className="search">
                         <SearchBar/>
                     </div>
@@ -63,15 +67,15 @@ export default function Home() {
                             <option value="whole 30">Whole 30</option>
                         </select>
                         <select onChange={handleSort}>
-                            <option value="asc">a-z</option>    
-                            <option value="desc">z-a</option>
+                            <option value="asc">A to Z</option>    
+                            <option value="desc">Z to A</option>
                         </select>
                         <select onChange={handleScore}>
                             <option value="highest">Highest score</option>
                             <option value="lowest">Lowest score</option>
                         </select>
                     </div>
-                    <a href="/create">CREATE RECIPE</a>
+                    <a href="/create"><button>Create recipe</button></a>
                 </nav>
                 <div className="paginado">
                     <Paginado
@@ -80,17 +84,15 @@ export default function Home() {
                         paginado={paginado}
                     />
                 </div>
-                <br/>
-                <br/>
                 <div className="card">
                     {
                         currentRecipes?.map(el => {
                             return(
-                                    <Link to={ '/home/' + el.id  }>
+                                    <a href={ '/home/' + el.id  }>
                                         <div className="align-card">
                                             <Card image={el.img} name={el.name} diet={el.diet ? el.diet + " " : el.diets.map(el => el.name.toString() + " ")}/>
                                         </div>
-                                    </Link>
+                                    </a>
                             )
                         })
                     }
