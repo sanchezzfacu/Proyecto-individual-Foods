@@ -43,60 +43,58 @@ export default function Home() {
     }
     
     return(
-        <div className="background-home">
-            <div className="header">
-                <div className="create">
-                <Link to="/create">CREATE RECIPE</Link>
+        <div>
+                <nav>
+                    <div className="search">
+                        <SearchBar/>
+                    </div>
+                    <div className="option">
+                        <select onChange={handleFilterRecipe}>
+                            <option value="all">All</option>
+                            <option value="vegan">Vegan</option>
+                            <option value="dairy free">Dairy free</option>
+                            <option value="gluten free">Gluten free</option>
+                            <option value="vegetarian">Vegetarian</option>
+                            <option value="lacto ovo vegetarian">Lacto ovo vegetarian</option>
+                            <option value="paleolithic">Paleolithic</option>
+                            <option value="primal">Primal</option>
+                            <option value="pescatarian">Pescatarian</option>
+                            <option value="fodmap friendly">Fodmap friendly</option>
+                            <option value="whole 30">Whole 30</option>
+                        </select>
+                        <select onChange={handleSort}>
+                            <option value="asc">a-z</option>    
+                            <option value="desc">z-a</option>
+                        </select>
+                        <select onChange={handleScore}>
+                            <option value="highest">Highest score</option>
+                            <option value="lowest">Lowest score</option>
+                        </select>
+                    </div>
+                    <a href="/create">CREATE RECIPE</a>
+                </nav>
+                <div className="paginado">
+                    <Paginado
+                        recipesPerPage={recipesPerPage}
+                        allRecipes={allRecipes.length}
+                        paginado={paginado}
+                    />
                 </div>
-                <div className="searchbar">
-                <SearchBar/>
-                </div>
-                <select onChange={handleFilterRecipe}>
-                    <option value="all">All</option>
-                    <option value="vegan">Vegan</option>
-                    <option value="dairy free">Dairy free</option>
-                    <option value="gluten free">Gluten free</option>
-                    <option value="vegetarian">Vegetarian</option>
-                    <option value="lacto ovo vegetarian">Lacto ovo vegetarian</option>
-                    <option value="paleolithic">Paleolithic</option>
-                    <option value="primal">Primal</option>
-                    <option value="pescatarian">Pescatarian</option>
-                    <option value="fodmap friendly">Fodmap friendly</option>
-                    <option value="whole 30">Whole 30</option>
-                </select>
-                <select onChange={handleSort}>
-                    <option value="asc">a-z</option>    
-                    <option value="desc">z-a</option>
-                </select>
-                <select onChange={handleScore}>
-                    <option value="highest">Highest score</option>
-                    <option value="lowest">Lowest score</option>
-                </select>
-            </div>
-            <div className="paginado">
-                <Paginado
-                    recipesPerPage={recipesPerPage}
-                    allRecipes={allRecipes.length}
-                    paginado={paginado}
-                />
                 <br/>
                 <br/>
-            </div>    
-                <div className="div-items">
+                <div className="card">
                     {
                         currentRecipes?.map(el => {
                             return(
-                                <div className="card">
                                     <Link to={ '/home/' + el.id  }>
                                         <div className="align-card">
                                             <Card image={el.img} name={el.name} diet={el.diet ? el.diet + " " : el.diets.map(el => el.name.toString() + " ")}/>
                                         </div>
                                     </Link>
-                                </div>
                             )
                         })
                     }
                 </div>
-        </div>            
+        </div>
     )
 }

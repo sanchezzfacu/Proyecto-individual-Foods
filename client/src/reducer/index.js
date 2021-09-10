@@ -1,8 +1,8 @@
 const initialState = {
     recipes : [],
     allRecipes: [],
-    allDetails: [],
-    types: []
+    types: [],
+    allDetails: []
 }
 
 function rootReducer(state = initialState, action) {

@@ -47,14 +47,28 @@ export function filterRecipeByType(payload) {
 }
 
 export function getDetail(id) {
-    return async function(dispatch) {
-        let json = await axios.get('http://localhost:3001/recipes/' + id)
-        return dispatch({
-            type: 'GET_DETAIL',
-            id: json.data
-        })
+    // return async function(dispatch) {
+    //     let json = await axios.get('http://localhost:3001/recipes/' + id)
+    //     return dispatch({
+    //         type: 'GET_DETAIL',
+    //         id: json.data
+    //     })
+    // 
+    return function(dispatch) {
+        axios.get('http://localhost:3001/recipes/' + id)
+        .then(json => {
+                return dispatch({
+                    type: 'GET_DETAIL',
+                    id: json.data
+                })
+            })
     }
+
 }
+
+
+
+
 
 export function getTypes() {
     return async function(dispatch) {
