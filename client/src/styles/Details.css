@@ -19,3 +19,10 @@
     margin-top: 20px;
     box-sizing: border-box;
 }
+
+.loading {
+    display: flex;
+    justify-content: center;
+    margin-top: 300px;
+    color: cornsilk;
+}

@@ -28,7 +28,10 @@ export default function Details(){
                         <h2>Puntuation: {myRecipe[0].puntuacion}</h2>
                         <h3>Step by step: {myRecipe[0].step_by_step}</h3>
                     </div>
-                 : <p>Loading...</p>
+                 : 
+                 <div className="loading">
+                    <p>Loading...</p>
+                 </div>
             }
                 <Link to="/home">
                     <button>

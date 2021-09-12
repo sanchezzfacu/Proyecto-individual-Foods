@@ -1,12 +1,11 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
 import { getRecipes, filterRecipeByType, orderByName, orderByScore } from '../actions'
 import Card  from './Card'
 import SearchBar  from './SearchBar';
 import Paginado from './Paginado';
-import logo from '../logoHenry.png'
+import logo from '../logo.png'
 import '../styles/Home.css'
 
 export default function Home() {
@@ -45,38 +44,51 @@ export default function Home() {
     
     return(
         <div>
+            <div className="header__color">
                 <nav>
-                    <a href="/home"> 
-                        <img src={logo}/>
-                    </a>
-                    <div className="search">
-                        <SearchBar/>
-                    </div>
-                    <div className="option">
-                        <select onChange={handleFilterRecipe}>
-                            <option value="all">All</option>
-                            <option value="vegan">Vegan</option>
-                            <option value="dairy free">Dairy free</option>
-                            <option value="gluten free">Gluten free</option>
-                            <option value="vegetarian">Vegetarian</option>
-                            <option value="lacto ovo vegetarian">Lacto ovo vegetarian</option>
-                            <option value="paleolithic">Paleolithic</option>
-                            <option value="primal">Primal</option>
-                            <option value="pescatarian">Pescatarian</option>
-                            <option value="fodmap friendly">Fodmap friendly</option>
-                            <option value="whole 30">Whole 30</option>
-                        </select>
-                        <select onChange={handleSort}>
-                            <option value="asc">A to Z</option>    
-                            <option value="desc">Z to A</option>
-                        </select>
-                        <select onChange={handleScore}>
-                            <option value="highest">Highest score</option>
-                            <option value="lowest">Lowest score</option>
-                        </select>
-                    </div>
-                    <a href="/create"><button>Create recipe</button></a>
+                    <div className="logo">
+                        <a href="/home"> 
+                            <img src={logo} alt="" height="50px"/>
+                        </a>
+                    </div>    
+                        <div className="search">
+                            <SearchBar/>
+                        </div>
+                        <div className="option">
+                            <div className="diet__filter">
+                                <select onChange={handleFilterRecipe}>
+                                    <option value="all">All</option>
+                                    <option value="vegan">Vegan</option>
+                                    <option value="dairy free">Dairy free</option>
+                                    <option value="gluten free">Gluten free</option>
+                                    <option value="vegetarian">Vegetarian</option>
+                                    <option value="lacto ovo vegetarian">Lacto ovo vegetarian</option>
+                                    <option value="paleolithic">Paleolithic</option>
+                                    <option value="primal">Primal</option>
+                                    <option value="pescatarian">Pescatarian</option>
+                                    <option value="fodmap friendly">Fodmap friendly</option>
+                                    <option value="whole 30">Whole 30</option>
+                                </select>
+                            </div>
+
+                            <div className="score__filter">
+                                <select onChange={handleScore}>
+                                    <option value="highest">Highest score</option>
+                                    <option value="lowest">Lowest score</option>
+                                </select>
+                            </div>
+                            <div className="ascendent__filter">
+                                <select onChange={handleSort}>
+                                    <option value="asc">A to Z</option>    
+                                    <option value="desc">Z to A</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div className="create__button">
+                            <a href="/create"><button>Create recipe</button></a>
+                        </div>
                 </nav>
+            </div>
                 <div className="paginado">
                     <Paginado
                         recipesPerPage={recipesPerPage}

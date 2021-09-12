@@ -8,8 +8,21 @@ body {
 
 nav {
     display: flex;
-    justify-content:space-evenly;
-    margin-top: 35px;
+    justify-content:space-between;
+    padding-top: 10px;
+}
+
+.header__color {
+    background-color: rgb(27, 59, 89);
+    height: 67px;
+}
+
+.items__headers {
+    padding-top: 20px;
+}
+
+.logo {
+    padding-left: 25px;
 }
 
 img {
@@ -19,12 +32,12 @@ img {
 
 .paginado {
     display: flex;
+    padding-top: 8px;
 }
 
 input, button, select, option {
-    border-radius: 7px;
+    border-radius: 2px;
     border: none;
-    cursor: pointer;
     height: 23px;
 }
 
@@ -38,6 +51,7 @@ button {
     font-size: 16px;
     color: #edf0f1;
     transition: all 0.3s ease 0s;
+    height: 25px;
 }
 
 .card {
@@ -73,3 +87,38 @@ a {
 button:hover {
     background-color: rgba(0,136,169,0.7)
 }
+
+.option {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+}
+
+.create__button {
+    padding-top: 10px;
+    padding-right: 20px;
+}
+
+.search {
+    padding-top: 10px;
+}
+
+.diet__filter {
+    padding-right: 20px;
+    font-family: sans-serif;
+}
+
+.score__filter {
+    padding-right: 20px;
+}
+
+input {
+    padding-left: 6px;
+}
+
+button:active {
+    background-color: rgb(42, 214, 42)
+}
+
+
+
