@@ -92,7 +92,7 @@ export default function RecipeCreate() {
             <div className="button__">
                 <a href="/home"><button>Back</button></a>
             </div>    
-            <h1>CREATE RECIPE</h1>
+            <div className="title"><h1>CREATE RECIPE</h1></div>
             <div className="div__form">
                 <form onSubmit={handleSubmit}>
                     <div className="input__div">

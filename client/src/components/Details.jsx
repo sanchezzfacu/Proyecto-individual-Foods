@@ -18,26 +18,40 @@ export default function Details(){
 
     return (
         <>
+        
             {
-                myRecipe.length > 0 ?
+            myRecipe.length > 0 ?
+                <div className="container__details">
                     <div className="hijo">
-                        <h1>{myRecipe[0].name.toUpperCase()}</h1>
-                        <img src={myRecipe[0].img} alt= "" width="300px" weight="500px"/>
-                        <h2>Diet's type: {myRecipe[0].diet ? myRecipe[0].diet.map(el => el?.toString() + " ") : myRecipe[0].diets.map(el => el.name.toString() + ", ")}</h2>
-                        <h2>Healthy score: {myRecipe[0].healthy_level}</h2>
-                        <h2>Puntuation: {myRecipe[0].puntuacion}</h2>
-                        <h3>Step by step: {myRecipe[0].step_by_step}</h3>
-                    </div>
-                 : 
-                 <div className="loading">
+                        <div className="detail__title">
+                            <div className="title__">
+                                <h1>{myRecipe[0].name.toUpperCase()}</h1>
+                            </div>
+                        </div>
+                        <div className="first__line">
+                            <div className="img__details">
+                                <img src={myRecipe[0].img} alt= "" width="300px" weight="500px"/>
+                            </div>
+                            <div className="section">
+                                <div className="diet__type">
+                                    <h3><h3>DIETS TYPE </h3>{myRecipe[0].diet ? myRecipe[0].diet.map(el => el?.toString() + ", ") : myRecipe[0].diets.map(el => el.name.toString() + ", ")}</h3><br/>
+                                </div>
+                                <div className="healthy__score">
+                                    <h3>HEALTHY SCORE: {myRecipe[0].healthy_level}</h3>
+                                </div>
+                                <h3>PUNTUATION:  {myRecipe[0].puntuacion}</h3>          
+                            </div>                  
+                        </div>
+                        <div className="steps">
+                            <h5><h3>STEP BY STEP </h3>{myRecipe[0].step_by_step}</h5>
+                        </div>
+                    </div>    
+                </div>
+                : 
+                <div className="loading">
                     <p>Loading...</p>
-                 </div>
+                </div>
             }
-                <Link to="/home">
-                    <button>
-                        HOME
-                    </button>
-                </Link>
         </>
     )
 }

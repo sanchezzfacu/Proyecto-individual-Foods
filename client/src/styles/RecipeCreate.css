@@ -24,7 +24,7 @@ label, h1 {
     color: #edf0f1
 }
 
-h1 {
+.title {
     margin-left: 570px;
     padding-bottom: 10px;
     font-family: sans-serif;

@@ -1,28 +1,62 @@
-.container {
+.container__details {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction:row;
+    padding-top: 50px;
 }
 
 .hijo {
-    margin-top: 20px;
-    background-attachment: fixed;
-    background-color:rgba(0, 0, 0, 0.7);
-    border-radius: 7px;
-    width: auto;
-    box-sizing: border-box;
-    text-align: center;
-    color: rgb(206, 206, 206)
+    background-color: rgb(27, 59, 89);
+    height: auto;
+    width: 1000px;
+    border-radius: 7px; 
+    color: #edf0f1;
+
 }
 
-.recipe-name {
-    margin-top: 20px;
-    box-sizing: border-box;
+.steps {
+    padding-top: 10px;
+    margin-left: 20px;
+    width: 970px;
 }
 
-.loading {
+.first__line {
+    display: flex;
+    padding-left: 90px;
+    margin-top: 20px;
+}
+
+.img__details {
+    margin-right: 50px;
+}
+
+.detail__title {
     display: flex;
     justify-content: center;
-    margin-top: 300px;
-    color: cornsilk;
+    align-items: center;
+    background-color: rgba(0,136,169,1);
+    height: auto;
+    border-radius: 7px;
+}
+
+.section {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 50px;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 7px;
+    border-color: rgba(0,136,169,1);
+    height: auto;
+    text-align: center;
+    width: 500px;
+}
+
+.healthy__score {
+    width: 280px;
+}
+
+.diet__type {
+    width: 600px;
 }
