@@ -120,5 +120,8 @@ button:active {
     background-color: rgb(42, 214, 42)
 }
 
+input:active {
+    border: none;
+}
 
 

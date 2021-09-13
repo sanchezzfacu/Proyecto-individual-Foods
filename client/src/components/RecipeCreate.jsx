@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Link,useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import { postRecipe, getTypes } from '../actions'
 import { useDispatch, useSelector } from 'react-redux'
 import '../styles/RecipeCreate.css'
@@ -22,10 +22,14 @@ function validate(input) {
 
     if(input.healthy_level > 100) {
         errors.healthy_level = 'Error, the maximum score is 100'
+    } else if(input.healthy_level < 0) {
+        errors.healthy_level = 'Error, score can not be negative'
     }
 
     if(input.puntuacion > 100) {
         errors.puntuacion = 'Error, the maximum score is 100'
+    } else if(input.puntuacion < 0) {
+        errors.puntuacion = 'Error, score can not be negative'
     }
     return errors;
 };    
@@ -84,127 +88,113 @@ export default function RecipeCreate() {
     }, [dispatch])
 
     return (
-        <div className="background">
-            <div className="volver">
-                <Link to='/home'><h2>BACK</h2></Link>
-            </div>
-        <div className="cuadro">
-        <div className="div-home">
-            <h1>Create recipe!</h1>
-            <div className="div-form">
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label>Name: </label>
-                    <div className="input-div">
-                    <input
-                        type="text"
-                        value={input.name}
-                        name="name"
-                        required
-                        className={errors.name && 'danger'}
-                        onChange={handleInputChange}
-                    />
-                    </div>
-                        {errors.name && (
-                        <div className="error">
+        <div>
+            <div className="button__">
+                <a href="/home"><button>Back</button></a>
+            </div>    
+            <h1>CREATE RECIPE</h1>
+            <div className="div__form">
+                <form onSubmit={handleSubmit}>
+                    <div className="input__div">
+                        <label>Name: </label>
+                        <input
+                            type="text"
+                            value={input.name}
+                            name="name"
+                            required
+                            className={errors.name && 'danger'}
+                            onChange={handleInputChange}
+                        />
+                                {errors.name && (
+                            <div className="error__color">
                                 <p>{errors.name}</p>
-                        </div>     
-                        )} 
-                </div>
-                <div>
-                    <label>Resume: </label>
-                    <div className="input-div">
-                    <input 
-                        type="text"
-                        value={input.resumen}
-                        name="resumen"
-                        required
-                        onChange={handleInputChange}
-                    />
-                    </div>
-                        <div className="error">
+                            </div>    
 
-                            {errors.resumen && (
-                            <p>{errors.resumen}</p>
-                        )}  
-                        </div>
-                </div>
-                <div>
-                    <label>Score 1 to 100: </label>
-                    <div className="input-div">
-                    <input 
-                        type="number"
-                        value={input.puntuacion}
-                        name="puntuacion"
-                        onChange={handleInputChange}
-                    />
+                                )} 
+                    </div>        
+                    <div className="input__div">
+                        <label>Resume: </label>
+                        <input 
+                            type="text"
+                            value={input.resumen}
+                            name="resumen"
+                            required
+                            onChange={handleInputChange}
+                        />
+                            <div className="error__color">
+                                {errors.resumen && (
+                                    <p>{errors.resumen}</p>
+                                )}
+                            </div> 
                     </div>
-                    <div className="error">
-                            {errors.puntuacion && (
-                            <p>{errors.puntuacion}</p>
-                        )}  
-                   </div>     
-                </div>
-                <div>
-                    <label>Healthy score 1 to 100: </label>
-                    <div className="input-div">
-                    <input  
-                        type="number"
-                        value={input.healthy_level}
-                        name="healthy_level"
-                        onChange={handleInputChange}
-                    />
+                    <div className="input__div">         
+                        <label>Score 1 to 100: </label>
+                        <input 
+                            type="number"
+                            value={input.puntuacion}
+                            name="puntuacion"
+                            onChange={handleInputChange}
+                        />
+                            <div className="error__color">
+                                {errors.puntuacion && (
+                                    <p>{errors.puntuacion}</p>
+                                )} 
+                            </div> 
                     </div>
-                        <div className="error">
-                            {errors.healthy_level && (
-                            <p>{errors.healthy_level}</p>
-                        )}  
-                        </div>
-                </div>
-                <div>
-                    <label>Step by step: </label>
-                    <div className="input-div">
-                    <input
-                        type="text"
-                        value={input.step_by_step}
-                        name="step_by_step"
-                        onChange={handleInputChange}
-                    />
+                    <div className="input__div">        
+                        <label>Healthy score 1 to 100: </label>
+                        <input  
+                            type="number"
+                            value={input.healthy_level}
+                            name="healthy_level"
+                            onChange={handleInputChange}
+                        />
+                            <div className="error__color">
+                                {errors.healthy_level && (
+                                    <p>{errors.healthy_level}</p>
+                                )}  
+                            </div>
                     </div>
-                            {errors.step_by_step && (
-                            <p>{errors.step_by_step}</p>
-                        )}  
-                </div>
-                <div>
-                    <label>Image: </label>
-                    <div className="input-div">
-                    <input 
-                        type="text"
-                        value={input.img}
-                        name="img"
-                        onChange={handleInputChange}
-                    />
+                    <div className="input__div">        
+                        <label>Step by step: </label>
+                        <input
+                            type="text"
+                            value={input.step_by_step}
+                            name="step_by_step"
+                            onChange={handleInputChange}
+                        />
+                            <div className="error__color">
+                                {errors.step_by_step && (
+                                    <p>{errors.step_by_step}</p>
+                                )} 
+                            </div>
                     </div>
-                        <div className="error">
-                            {errors.img && (
-                            <p>{errors.img}</p>
-                        )}  
-                        </div>
-                </div>
-                <br/>
-                <select onChange={handleSelect}>
-                    {types.map((type) => (
-                        <option value={type.name}>{type.name}</option>
-                    ))}
-                </select>
-                <div className="diets">
-                <p>{input.diet.map(el => el.toString().toUpperCase() + ", ")}</p>     
-                </div>
-                <button type="submit">CREATE RECIPE</button>
-            </form>
+                    <div className="input__div">         
+                        <label>Image url: </label>
+                        <input 
+                            type="text"
+                            value={input.img}
+                            name="img"
+                            onChange={handleInputChange}
+                        />  
+                            <div className="error__color">
+                                {errors.img && (
+                                    <p>{errors.img}</p>
+                                )}
+                            </div>
+                    </div>          
+                    <br/>
+                    <select onChange={handleSelect}>
+                        {types.map((type) => (
+                            <option value={type.name}>{type.name.toUpperCase()}</option>
+                        ))}
+                    </select>
+                        <div className="select__color">    
+                            <p>{input.diet.map(el => el.toString().toUpperCase() + " ")}</p>
+                        </div>     
+                    <button type="submit">CREATE RECIPE</button>
+                </form>
             </div>
-        </div>
-        </div>
         </div>
     )
 }
