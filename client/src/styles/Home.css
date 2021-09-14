@@ -23,10 +23,6 @@ nav {
 
 .logo {
     padding-left: 25px;
-}
-
-img {
-    border-radius: 7px;
     cursor: pointer;
 }
 
@@ -39,6 +35,7 @@ input, button, select, option {
     border-radius: 2px;
     border: none;
     height: 23px;
+    font-family: sans-serif;
 }
 
 button {
@@ -78,6 +75,9 @@ a {
     color: #edf0f1;
     text-decoration: none;
     transition: all 0.3s ease 0s;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #1c3ad1;
 }
 
 .align-card:hover {
@@ -124,4 +124,6 @@ input:active {
     border: none;
 }
 
-
+button, select, option {
+    cursor: pointer;
+}

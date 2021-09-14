@@ -48,7 +48,7 @@ export default function Home() {
                 <nav>
                     <div className="logo">
                         <a href="/home"> 
-                            <img src={logo} alt="" height="50px"/>
+                            <img src={logo} alt="" height="53px"/>
                         </a>
                     </div>    
                         <div className="search">

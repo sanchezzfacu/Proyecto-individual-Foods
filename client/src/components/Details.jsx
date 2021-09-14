@@ -3,7 +3,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { getDetail } from '../actions';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import '../styles/Details.css'
 
 
@@ -18,7 +18,9 @@ export default function Details(){
 
     return (
         <>
-        
+            <div className="button__home">
+                <a href="/home"><button>Home</button></a>
+            </div>
             {
             myRecipe.length > 0 ?
                 <div className="container__details">
@@ -48,9 +50,12 @@ export default function Details(){
                     </div>    
                 </div>
                 : 
+                myRecipe.length ?                 
                 <div className="loading">
                     <p>Loading...</p>
-                </div>
+                </div>  
+                :
+                <div>Error, 404</div>
             }
         </>
     )

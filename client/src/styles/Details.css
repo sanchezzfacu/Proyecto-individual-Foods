@@ -3,7 +3,7 @@
     justify-content: center;
     align-items: center;
     flex-direction:row;
-    padding-top: 50px;
+    padding-top: 35px;
 }
 
 .hijo {
@@ -37,7 +37,8 @@
     align-items: center;
     background-color: rgba(0,136,169,1);
     height: auto;
-    border-radius: 7px;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
 }
 
 .section {
@@ -59,4 +60,10 @@
 
 .diet__type {
     width: 600px;
+}
+
+.button__home {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
 }
