@@ -50,12 +50,10 @@ export default function Details(){
                     </div>    
                 </div>
                 : 
-                myRecipe.length ?                 
                 <div className="loading">
                     <p>Loading...</p>
                 </div>  
-                :
-                <div>Error, 404</div>
+
             }
         </>
     )

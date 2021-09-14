@@ -67,3 +67,10 @@
     justify-content: center;
     margin-top: 30px;
 }
+
+.loading {
+    display: flex;
+    justify-content: center;
+    margin-top: 270px;
+    color: oldlace;
+}

@@ -96,7 +96,7 @@ button:hover {
 
 .create__button {
     padding-top: 10px;
-    padding-right: 20px;
+    padding-right: 50px;
 }
 
 .search {
@@ -114,15 +114,13 @@ button:hover {
 
 input {
     padding-left: 6px;
+    outline: none;
 }
 
 button:active {
     background-color: rgb(42, 214, 42)
 }
 
-input:active {
-    border: none;
-}
 
 button, select, option {
     cursor: pointer;
