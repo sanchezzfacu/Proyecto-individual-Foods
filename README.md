@@ -11,8 +11,7 @@
 ## Qué utilidad tiene la aplicacion?
 
 La apliacion esta diseñada para poder encontrar recetas de todos los tipos de dietas existentes, se puede filtrar por puntaje de salubridad, puntuacion general, tipos
-de dietas, por orden alfabetico, por orden ascendente/descendente de acuerdo a la puntuacion general. Se puede encontrar cualquier tipo de comidas y si la quieres
-cocinar por tu propia cuenta tienes la  receta tambien disponible.
+de dietas, por orden alfabetico, por orden ascendente/descendente de acuerdo a la puntuacion general. Se puede encontrar cualquier tipo de comida y si te interesa una receta en especifico tienes la receta tambien disponible.
 
 ## Qué tecnologías se usaron para desarrollar la aplicacion? 
 
