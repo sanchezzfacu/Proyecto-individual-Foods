@@ -72,12 +72,10 @@ a {
     align-items: center;
     border-radius: 7px;
     text-align: center;
-    color: #edf0f1;
+    color: #ffff;
     text-decoration: none;
     transition: all 0.3s ease 0s;
     border-width: 1px;
-    border-style: solid;
-    border-color: #1c3ad1;
 }
 
 .align-card:hover {
