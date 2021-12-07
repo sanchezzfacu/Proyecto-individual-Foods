@@ -8,12 +8,12 @@
   <img height="200" src="./cooking.png" />
 </p>
 
-## Que hace la aplicacion?
+## Qué utilidad tiene la aplicacion?
 
 La apliacion esta diseñada para poder encontrar recetas de todos los tipos de dietas existentes, se puede filtrar por puntaje de salubridad, puntuacion general, tipos
 de dietas, por orden alfabetico, por orden ascendente/descendente de acuerdo a la puntuacion general. Se puede encontrar cualquier tipo de comidas y si la quieres
 cocinar por tu propia cuenta tienes la  receta tambien disponible.
 
-## Que se usó para desarrollar la aplicacion? 
+## Qué tecnologías se usaron para desarrollar la aplicacion? 
 
 Para el frontend se hizo uso de React, Redux y css puro para los estilos sin ninguna librería externa. Para el backend se desarrolló un servidor en Express, la base de datos fue creada con Sequelize y PostgreSQL.
