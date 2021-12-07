@@ -16,5 +16,4 @@ cocinar por tu propia cuenta tienes la  receta tambien disponible.
 
 ## Que se usó para desarrollar la aplicacion? 
 
-Para el frontend se hizo uso de React, Redux y css puro para los estilos sin ninguna librería externa
-Para el backend se desarrolló un servidor en Express, la base de datos fue creada con Sequelize y PostgreSQL.
+Para el frontend se hizo uso de React, Redux y css puro para los estilos sin ninguna librería externa. Para el backend se desarrolló un servidor en Express, la base de datos fue creada con Sequelize y PostgreSQL.
