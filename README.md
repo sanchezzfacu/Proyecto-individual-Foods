@@ -10,11 +10,12 @@
 
 ## Objetivos del Proyecto
 
-- Construir una App utlizando React, Redux, Node y Sequelize.
-- Afirmar y conectar los conceptos aprendidos en la carrera.
-- Aprender mejores prácticas.
-- Aprender y practicar el workflow de GIT.
-- Usar y practicar testing.
+    Desarrollé una SPA (Single Page Application) utilizando React para el Front End y Redux como state management. 
+    En los estilos se implementó CSS puro sin uso de librerías externas.
+    La SPA consume datos de una API a través de un Back End desarrollado en Node utilizando Express, agregando nuevas 
+    funcionalidades a la API original. En el proyecto se pueden encontrar filtros
+    (comida, tipos de dieta, puntuacion de nivel de saludabe, nombre por orden alfabético) y un formulario para la creación 
+    de nuevas recetas que se almacenan en una base de datos realizada con Sequelize y PostgreSQL.
 
 ## Horarios y Fechas
 
