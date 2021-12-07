@@ -8,11 +8,13 @@
   <img height="200" src="./cooking.png" />
 </p>
 
-## Objetivos del Proyecto
+## Que hace la aplicacion?
 
-Desarrollé una SPA (Single Page Application) utilizando React para el Front End y Redux como state management. 
-En los estilos se implementó CSS puro sin uso de librerías externas.
-La SPA consume datos de una API a través de un Back End desarrollado en Node utilizando Express, agregando nuevas 
-funcionalidades a la API original. En el proyecto se pueden encontrar filtros
-(comida, tipos de dieta, puntuacion de nivel de saludabe, nombre por orden alfabético) y un formulario para la creación 
-de nuevas recetas que se almacenan en una base de datos realizada con Sequelize y PostgreSQL.
+La apliacion esta diseñada para poder encontrar recetas de todos los tipos de dietas existentes, se puede filtrar por puntaje de salubridad, puntuacion general, tipos
+de dietas, por orden alfabetico, por orden ascendente/descendente de acuerdo a la puntuacion general. Se puede encontrar cualquier tipo de comidas y si la quieres
+cocinar por tu propia cuenta tienes la  receta tambien disponible.
+
+## Que se usó para desarrollar la aplicacion? 
+
+Para el frontend se hizo uso de React, Redux y css puro para los estilos sin ninguna librería externa
+Para el backend se desarrolló un servidor en Express, la base de datos fue creada con Sequelize y PostgreSQL.
