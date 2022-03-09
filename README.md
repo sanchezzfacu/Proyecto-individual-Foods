@@ -1,4 +1,4 @@
-# Individual Project - Henry Food
+# Individual Project - Recipe App
 
 <p align="right">
   <img height="200" src="./cooking.png" />
